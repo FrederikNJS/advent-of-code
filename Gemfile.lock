@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.2)
+    lazy_priority_queue (0.1.1)
+    method_source (0.9.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    rgl (0.5.3)
+      lazy_priority_queue (~> 0.1.0)
+      stream (~> 0.5.0)
+    stream (0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  pry!
+  rgl!
+
+BUNDLED WITH
+   1.16.1
