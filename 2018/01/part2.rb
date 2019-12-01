@@ -3,7 +3,7 @@ require 'set'
 sum = 0
 seen = Set.new
 collision = false
-File.readlines('01/puzzle-input.txt').map {|line| line.strip}.cycle do |line|
+File.readlines('2018/01/puzzle-input.txt').map {|line| line.strip}.cycle do |line|
   number = line.to_i
   sum += number
   if seen.include? sum

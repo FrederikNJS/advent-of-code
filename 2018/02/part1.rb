@@ -1,4 +1,4 @@
-lines = File.readlines('02/puzzle-input.txt').map {|line| line.strip}
+lines = File.readlines('2018/02/puzzle-input.txt').map {|line| line.strip}
 
 two_counter = 0
 three_counter = 0

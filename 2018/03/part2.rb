@@ -1,4 +1,4 @@
-lines = File.readlines('03/puzzle-input.txt').map(&:strip)
+lines = File.readlines('2018/03/puzzle-input.txt').map(&:strip)
 
 regex = /^#(?<id>\d+) @ (?<x>\d+),(?<y>\d+): (?<width>\d+)x(?<height>\d+)$/
 

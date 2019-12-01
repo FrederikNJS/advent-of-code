@@ -1,6 +1,6 @@
 require 'pry'
 
-lines = File.readlines('10/puzzle-input.txt').map {|line| line.strip}
+lines = File.readlines('2018/10/puzzle-input.txt').map {|line| line.strip}
 
 regex = /^position=<\s*(?<x_pos>-?\d+),\s*(?<y_pos>-?\d+)> velocity=<\s*(?<x_vel>-?\d+),\s*(?<y_vel>-?\d+)>$/
 

@@ -1,5 +1,5 @@
 require 'pry'
-input = File.read('05/puzzle-input.txt').strip
+input = File.read('2018/05/puzzle-input.txt').strip
 
 previous = input
 current = ''

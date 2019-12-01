@@ -3,7 +3,7 @@ require 'set'
 
 def read_coordinates
   regex = /^(?<x>\d+), (?<y>\d+)$/
-  File.readlines('06/puzzle-input.txt')
+  File.readlines('2018/06/puzzle-input.txt')
       .map(&:strip)
       .map { |line| regex.match(line) }
       .map { |match| [match[:x].to_i, match[:y].to_i] }

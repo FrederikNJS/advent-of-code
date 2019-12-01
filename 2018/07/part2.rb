@@ -3,7 +3,7 @@ require 'set'
 
 def read_edges
   regex = /^Step (?<start>[A-Z]) must be finished before step (?<end>[A-Z]) can begin\.$/
-  File.readlines('07/puzzle-input.txt')
+  File.readlines('2018/07/puzzle-input.txt')
       .map(&:strip)
       .map { |line| regex.match(line) }
       .map { |match| { start: match[:start], end: match[:end] } }

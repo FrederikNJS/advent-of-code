@@ -1,6 +1,6 @@
 require 'pry'
 
-lines = File.readlines('04/puzzle-input.txt').map(&:strip)
+lines = File.readlines('2018/04/puzzle-input.txt').map(&:strip)
 sorted = lines.sort
 regex = /^\[(?<year>\d+)-(?<month>\d+)-(?<day>\d+) (?<hour>\d+):(?<minute>\d+)\] (?<message>Guard #(?<guard>\d+) begins shift|falls asleep|wakes up)$/
 parsed = sorted.map { |line| regex.match line }.map do |match|

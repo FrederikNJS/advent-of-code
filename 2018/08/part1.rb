@@ -1,7 +1,7 @@
 require 'pry'
 
 def read_input
-  File.read('08/puzzle-input.txt')
+  File.read('2018/08/puzzle-input.txt')
       .strip
       .split(' ')
       .map(&:to_i)

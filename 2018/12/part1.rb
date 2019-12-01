@@ -1,7 +1,7 @@
 require 'pry'
 
 def read_file
-  File.readlines('12/puzzle-input.txt')
+  File.readlines('2018/12/puzzle-input.txt')
       .map(&:strip)
 end
 
