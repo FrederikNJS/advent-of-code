@@ -28,6 +28,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
+    ruby-prof (1.0.0)
     stream (0.5)
     thor (0.20.3)
 
@@ -39,6 +40,7 @@ DEPENDENCIES
   readapt!
   rgl!
   rspec!
+  ruby-prof!
 
 BUNDLED WITH
    1.17.3

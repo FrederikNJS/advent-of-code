@@ -3,4 +3,5 @@ source 'https://rubygems.org' do
   gem 'rgl'
   gem 'rspec'
   gem 'readapt'
+  gem 'ruby-prof'
 end
