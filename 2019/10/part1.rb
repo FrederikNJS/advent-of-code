@@ -59,16 +59,16 @@ def find_visible_asteroids(origin, asteroids)
 end
 
 def find_all_visibles(asteroids)
-    puts "Finding visible asteroids"
+    #puts "Finding visible asteroids"
     asteroids.map do |asteroid|
-        puts "calculating asteroid #{asteroid}"
+        #puts "calculating asteroid #{asteroid}"
         visible = [asteroid, find_visible_asteroids(asteroid, asteroids).length]
         visible
     end
 end
 
 def find_best_candidate(visible_list)
-    puts "Selecting the best candidate"
+    #puts "Selecting the best candidate"
     visible_list.max { |a, b| a[1] <=> b[1] }
 end
 
