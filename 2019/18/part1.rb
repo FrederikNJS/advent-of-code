@@ -80,37 +80,6 @@ def build_path(paths, v)
     return path
 end
 
-$best_distance = 1_000_000
-
-def all_shortest_path(targets, shortest_paths, paths_blocked_by, origin, found_keys=Immutable::Set['@'], distance=0)
-    puts found_keys.inspect
-
-    if (targets.keys - found_keys).empty?
-        $best_distance = distance if $best_distance > distance
-        puts "Found new best: #{distance}"
-        #binding.pry
-        return distance
-    end
-
-
-    #binding.pry
-    (targets.keys - found_keys).filter do |target|
-        (paths_blocked_by[origin][target] - found_keys.map(&:upcase)).empty?
-    end.sort_by do |target|
-        shortest_paths[origin][target].length
-    end.map do |target|
-        choice_length = distance + shortest_paths[target].length - 1
-        result = nil
-        if choice_length < $best_distance
-            puts "#{choice_length} vs #{$best_distance}"
-            result = all_shortest_path(targets, shortest_paths, paths_blocked_by, target, found_keys.add(target), choice_length)
-        end
-        result
-    end.filter do |result|
-        !result.nil?
-    end.min
-end
-
 def possible_keys(paths, special_locations)
     special_locations.filter do |name, location|
         ('a'..'z').include?(name) && paths.keys.include?(location)
@@ -140,7 +109,6 @@ def distance_to_collect_keys(current_key, keys_to_find, cache, input, special_lo
     end
 
     cache[cacheKey] = result
-    puts result
     return result
 end
 
@@ -157,11 +125,5 @@ if __FILE__ == $0
     cache = Hash.new
 
     result = distance_to_collect_keys('@', targets.keys.to_set, cache, input, special_locations, targets.keys.to_set)
-
-    puts "debug"
-
-    #wat = recurse_key_search(input, special_locations)
-
-    #height = input.length
-    #width = input[0].length
+    puts result
 end
