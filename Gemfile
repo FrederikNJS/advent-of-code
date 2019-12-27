@@ -4,4 +4,5 @@ source 'https://rubygems.org' do
   gem 'rspec'
   gem 'readapt'
   gem 'ruby-prof'
+  gem 'immutable-ruby'
 end

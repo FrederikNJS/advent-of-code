@@ -23,7 +23,7 @@ def param_locations111(program, op_mode, position, relative_base)
     end
 end
 
-def process_program111(program, inputs, outputs)
+def process_program111(program, inputs, outputs, waiting_for_input=nil)
     logger = Logger.new(STDOUT)
     logger.level = Logger::INFO
 
@@ -48,6 +48,7 @@ def process_program111(program, inputs, outputs)
         when 3 # input
             logger.debug("#{program.slice(position, 2).join(',')}")
             logger.debug("[#{position}] Input mode #{op_mode.first 1}, #{param_location.first(1).map{|index| program[index]}}")
+            waiting_for_input << true unless waiting_for_input.nil?
             program[param_location[0]] = inputs.pop
             position += 2
         when 4 # output
@@ -90,6 +91,7 @@ def process_program111(program, inputs, outputs)
         when 99 # exit
             logger.debug("#{program[position]}")
             logger.debug("[#{position}] Exit")
+            waiting_for_input << false unless waiting_for_input.nil?
             break
         else
             raise Exception.new("Invalid instruction at position #{position}, found instruction #{program[position]}.\n#{program}")
