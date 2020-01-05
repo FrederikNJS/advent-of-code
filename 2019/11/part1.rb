@@ -32,7 +32,7 @@ def process_program111(program, inputs, outputs, waiting_for_input=nil)
     while true
         op_mode = op_mode091 program[position]
         op = program[position] % 100
-        param_location = param_locations091(program, op_mode, position, relative_base)
+        param_location = param_locations111(program, op_mode, position, relative_base)
 
         case op
         when 1 # add
