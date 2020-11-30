@@ -1,6 +1,6 @@
 require_relative '../../../2019/12/part1.rb'
 
-RSpec.describe '2019/12/Part1' do
+RSpec.xdescribe '2019/12/Part1' do
     it 'can calculate the gravity difference between two moons' do
         moon_a = Moon.new(Coord.new(-1, 0, 2))
         moon_b = Moon.new(Coord.new(2, -10, -7))

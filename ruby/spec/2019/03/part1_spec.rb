@@ -1,6 +1,6 @@
 require_relative '../../../2019/03/part1.rb'
 
-RSpec.describe '2019/03/Part1' do
+RSpec.xdescribe '2019/03/Part1' do
     it 'can parse an instruction' do
         expect(parse_instruction('R17')).to eq({direction: 'R', length: 17})
     end
