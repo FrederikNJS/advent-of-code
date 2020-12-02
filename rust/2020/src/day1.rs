@@ -8,20 +8,20 @@ use itertools::Itertools;
 #[allow(dead_code)]
 fn read_file() -> Result<Vec<String>, Error> {
     let path = Path::new("day1.txt");
-    let file = File::open(&path).expect("file not found!");
+    let file = File::open(&path)?;
     let reader = BufReader::new(file);
     reader.lines().collect()
 }
 
 #[allow(dead_code)]
-fn parse_number_vec(list: Vec<String>) -> Vec<i32> {
-    list.iter().map(|x| x.parse::<i32>().expect("not a number")).collect()
+fn parse_number_vec(list: impl Iterator<Item=String>) -> impl Iterator<Item=i32> {
+    list.map(|x| x.parse::<i32>().expect("not a number"))
 }
 
 #[allow(dead_code)]
-fn find_x_that_sum_to(numbers: Vec<i32>, choices: usize, target: i32) -> Vec<i32> {
-    let combinations: Vec<Vec<i32>> = numbers.iter().cloned().combinations(choices).collect();
-    combinations.iter().find(|comb| comb.iter().cloned().sum::<i32>() == target).unwrap().to_vec()
+fn find_x_that_sum_to(numbers: impl Iterator<Item=i32>, choices: usize, target: i32) -> Vec<i32> {
+    let combinations = numbers.combinations(choices);
+    combinations.into_iter().find(|comb| comb.into_iter().sum::<i32>() == target).unwrap().to_vec()
 }
 
 #[cfg(test)]
@@ -32,7 +32,7 @@ mod tests {
     #[test]
     fn part1() {
         let list = read_file().unwrap();
-        let numbers = parse_number_vec(list);
+        let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 2, 2020);
         println!("{:?}", components);
         println!("product {}", components.iter().fold(1, |sum, x| sum * x));
@@ -41,7 +41,7 @@ mod tests {
     #[test]
     fn part2() {
         let list = read_file().unwrap();
-        let numbers = parse_number_vec(list);
+        let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 3, 2020);
         println!("{:?}", components);
         println!("product {}", components.iter().fold(1, |sum, x| sum * x));
