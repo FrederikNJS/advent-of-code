@@ -80,7 +80,8 @@ mod tests {
         let contents = read_file().unwrap();
         let db_entries = parse_db(contents);
         let valid_entries = db_entries.into_iter().filter(|entry| exjob_validate_entry(entry));
-        println!("valid entries (old job): {}", valid_entries.count())
+        //println!("valid entries (old job): {}", valid_entries.count());
+        assert_eq!(valid_entries.count(), 628);
     }
 
     #[test]
@@ -88,6 +89,7 @@ mod tests {
         let contents = read_file().unwrap();
         let db_entries = parse_db(contents);
         let valid_entries = db_entries.into_iter().filter(|entry| newjob_validate_entry(entry));
-        println!("valid entries (new job): {}", valid_entries.count())
+        //println!("valid entries (new job): {}", valid_entries.count())
+        assert_eq!(valid_entries.count(), 705);
     }
 }

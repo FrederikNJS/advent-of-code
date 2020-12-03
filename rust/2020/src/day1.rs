@@ -35,8 +35,8 @@ mod tests {
         let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 2, 2020);
         let product = components.iter().fold(1, |sum, x| sum * x);
-        println!("{:?}", components);
-        println!("product {}", product);
+        //println!("{:?}", components);
+        //println!("product {}", product);
         assert_eq!(product, 691771);
     }
 
@@ -46,8 +46,8 @@ mod tests {
         let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 3, 2020);
         let product = components.iter().fold(1, |sum, x| sum * x);
-        println!("{:?}", components);
-        println!("product {}", product);
+        //println!("{:?}", components);
+        //println!("product {}", product);
         assert_eq!(product, 232508760);
     }
 }
