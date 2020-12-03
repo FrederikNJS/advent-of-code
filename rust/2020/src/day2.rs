@@ -5,16 +5,14 @@ use std::path::Path;
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
-use itertools::Itertools;
 use grok::Grok;
-use std::iter::Map;
 
 #[allow(dead_code)]
 fn read_file() -> Result<Vec<String>, Error> {
     let path = Path::new("day2.txt");
     let file = File::open(&path)?;
     let reader = BufReader::new(file);
-    reader.lines().collect()
+    reader.lines().filter(|line| !line.as_ref().unwrap().is_empty()).collect()
 }
 
 #[derive(PartialEq, Debug)]

@@ -10,7 +10,7 @@ fn read_file() -> Result<Vec<String>, Error> {
     let path = Path::new("day1.txt");
     let file = File::open(&path)?;
     let reader = BufReader::new(file);
-    reader.lines().collect()
+    reader.lines().filter(|line| !line.as_ref().unwrap().is_empty()).collect()
 }
 
 #[allow(dead_code)]
@@ -34,8 +34,10 @@ mod tests {
         let list = read_file().unwrap();
         let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 2, 2020);
+        let product = components.iter().fold(1, |sum, x| sum * x);
         println!("{:?}", components);
-        println!("product {}", components.iter().fold(1, |sum, x| sum * x));
+        println!("product {}", product);
+        assert_eq!(product, 691771);
     }
 
     #[test]
@@ -43,7 +45,9 @@ mod tests {
         let list = read_file().unwrap();
         let numbers = parse_number_vec(list.iter().cloned());
         let components = find_x_that_sum_to(numbers, 3, 2020);
+        let product = components.iter().fold(1, |sum, x| sum * x);
         println!("{:?}", components);
-        println!("product {}", components.iter().fold(1, |sum, x| sum * x));
+        println!("product {}", product);
+        assert_eq!(product, 232508760);
     }
 }
