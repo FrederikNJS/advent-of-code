@@ -74,11 +74,6 @@ mod tests {
     }
 
     #[test]
-    fn example2() {
-
-    }
-
-    #[test]
     fn part2() {
         let mut seats = [[false; 8]; 128];
         let input = read_file("day5.txt").unwrap();

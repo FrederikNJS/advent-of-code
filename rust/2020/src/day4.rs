@@ -15,7 +15,7 @@ fn read_file(filename: &str) -> Result<String, Error> {
 }
 
 #[allow(dead_code)]
-fn split_passports(input: String) -> Vec<String> {
+fn split_passports(input: &String) -> Vec<String> {
     input.split("\n\n").map(|x| x.replace("\n", " ")).filter(|x| !x.is_empty()).collect()
 }
 
@@ -143,7 +143,7 @@ mod tests {
     #[test]
     fn example1() {
         let input = read_file("day4_ex1.txt").unwrap();
-        let passport_strings = split_passports(input);
+        let passport_strings = split_passports(&input);
         let passports = passport_strings.into_iter().map(|passport_string| parse_passport(&passport_string));
         let valid_passports = passports.filter(|passport| passport_has_valid_field_names(&passport));
         assert_eq!(valid_passports.count(), 2);
@@ -152,7 +152,7 @@ mod tests {
     #[test]
     fn part1() {
         let input = read_file("day4.txt").unwrap();
-        let passport_strings = split_passports(input);
+        let passport_strings = split_passports(&input);
         let passports = passport_strings.into_iter().map(|passport_string| parse_passport(&passport_string));
         let valid_passports = passports.filter(|passport| passport_has_valid_field_names(&passport));
         assert_eq!(valid_passports.count(), 190);
@@ -210,7 +210,7 @@ mod tests {
     fn example2() {
         let grokker = build_grokker();
         let input = read_file("day4_ex2.txt").unwrap();
-        let passport_strings = split_passports(input);
+        let passport_strings = split_passports(&input);
         let passports = passport_strings.into_iter().map(|passport_string| parse_passport(&passport_string));
         let valid_passports = passports.filter(|passport| passport_is_valid(&grokker, passport));
         assert_eq!(valid_passports.count(), 4);
@@ -220,7 +220,7 @@ mod tests {
     fn part2() {
         let grokker = build_grokker();
         let input = read_file("day4.txt").unwrap();
-        let passport_strings = split_passports(input);
+        let passport_strings = split_passports(&input);
         let passports = passport_strings.into_iter().map(|passport_string| parse_passport(&passport_string));
         let valid_passports = passports.filter(|passport| passport_is_valid(&grokker, passport));
         // 122 too high
