@@ -26,7 +26,6 @@ fn find_x_that_sum_to(numbers: impl Iterator<Item=i32>, choices: usize, target: 
 
 #[cfg(test)]
 mod tests {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
 
     #[test]

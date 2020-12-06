@@ -61,7 +61,6 @@ fn newjob_validate_entry(entry: &DatabaseEntry) -> bool {
 
 #[cfg(test)]
 mod tests {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
 
     #[test]
