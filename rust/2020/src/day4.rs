@@ -138,8 +138,6 @@ fn passport_is_valid(grokker: &Grokker, passport: &HashMap<String, String>) -> b
 mod tests {
     use super::*;
 
-
-
     #[test]
     fn example1() {
         let input = read_file("day4_ex1.txt").unwrap();

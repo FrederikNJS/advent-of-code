@@ -57,7 +57,6 @@ fn convert_to_seat_id(row: usize, column: usize) -> usize {
 
 #[cfg(test)]
 mod tests {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
 
     #[test]

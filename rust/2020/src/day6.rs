@@ -48,25 +48,7 @@ fn count_common_answer_types(group: Vec<String>) -> usize {
 
 #[cfg(test)]
 mod tests {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
-
-//    #[test]
-//    fn wtf_set() {
-//        let mut set_a: HashSet<char> = HashSet::new();
-//        let mut set_b: HashSet<char> = HashSet::new();
-//        let mut set_c: HashSet<char> = HashSet::new();
-//        set_a.insert('a');
-//        set_a.insert('b');
-//        set_b.insert('b');
-//        set_b.insert('c');
-//        set_c.insert('c');
-//        set_c.insert('d');
-//        let union = set_a.union(&set_b);
-//        let result = union.cloned().collect::<HashSet<char>>();
-//        let result2 = result.union(&set_c).cloned().collect::<HashSet<char>>();
-//        //println!("{:?}", result2);
-//    }
 
     #[test]
     fn example1() {
