@@ -116,7 +116,6 @@ fn try_mutate_fix_program(program: &Vec<(Instruction, isize)>) -> Computer {
 mod tests {
     use super::*;
 
-    #[ignore]
     #[test]
     fn example1() {
         let program_lines = read_file("day8_ex1.txt").unwrap();
@@ -130,7 +129,6 @@ mod tests {
         assert_eq!(computer.accumulator, 5);
     }
 
-    #[ignore]
     #[test]
     fn part1() {
         let program_lines = read_file("day8.txt").unwrap();
