@@ -6,6 +6,8 @@ version = "0.1.0"
 dependencies = [
  "grok",
  "itertools",
+ "lazy_static",
+ "regex",
 ]
 
 [[package]]

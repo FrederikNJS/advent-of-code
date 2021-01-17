@@ -67,15 +67,6 @@ impl Computer {
         }
     }
 
-//    fn run_until_loop(&mut self) {
-//        let mut executed_instructions: HashSet<usize> = HashSet::new();
-//        while !executed_instructions.contains(&self.instruction_pointer) {
-//            //println!("{:?} {:?} {:?}", self.instruction_pointer, self.program[self.instruction_pointer], self.accumulator);
-//            executed_instructions.insert(self.instruction_pointer);
-//            self.step()
-//        }
-//    }
-
     fn run_until_termination(&mut self) -> ExitCode {
         let mut executed_instructions: HashSet<usize> = HashSet::new();
         while !executed_instructions.contains(&self.instruction_pointer) {
