@@ -1,6 +1,6 @@
 require_relative '../../../2019/18/part1.rb'
 
-RSpec.xdescribe '2019/18/Part1' do
+RSpec.describe '2019/18/Part1' do
     it 'works for example 1' do
         input = <<-EOF.chomp.lines.map {|line| line.chars}
 #########

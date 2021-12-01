@@ -1,13 +1,13 @@
 module Day201922Part1
-    def Day201922Part1.deal_into_new_deck(deck)
+    def self.deal_into_new_deck(deck)
         deck.reverse
     end
 
-    def Day201922Part1.cut(deck, n)
+    def self.cut(deck, n)
         deck.rotate(n)
     end
 
-    def Day201922Part1.deal_with_increment(deck, increment)
+    def self.deal_with_increment(deck, increment)
         new_deck = Array.new(deck.length)
         deck.each.with_index do |card, index|
             new_deck[index * increment % deck.length] = card
@@ -15,7 +15,7 @@ module Day201922Part1
         new_deck
     end
 
-    def Day201922Part1.shuffle(deck, instructions)
+    def self.shuffle(deck, instructions)
         instructions.each do |instruction|
             case instruction
             when /^deal into new stack$/
