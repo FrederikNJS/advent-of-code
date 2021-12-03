@@ -1,6 +1,6 @@
 require_relative '../../../2021/02/part1.rb'
 
-RSpec.describe "2021/01/Part1" do
+RSpec.describe "2021/03/Part1" do
     part1 = Y2021::Day2::Part1
 
     context "unit tests" do
