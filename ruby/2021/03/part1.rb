@@ -10,7 +10,8 @@ module Y2021
             end
 
             def self.bitwise_not value, digits
-                value.to_s(2).rjust(digits, '0').gsub('1', '2').gsub('0', '1').gsub('2', '0').to_i(2)
+                ~value % (1 << digits)
+                #value.to_s(2).rjust(digits, '0').gsub('1', '2').gsub('0', '1').gsub('2', '0').to_i(2)
             end
 
             def self.calculate_diagnostics input, digits
