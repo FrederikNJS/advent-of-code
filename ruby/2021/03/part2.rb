@@ -11,7 +11,6 @@ module Y2021
                 current_digit = digits - 1
                 while working_set.count > 1
                     gamma_rate, epsilon_rate = Y2021::Day3::Part1.calculate_diagnostics working_set, digits
-                    #binding.pry
                     working_set = working_set.filter do |value|
                         value & (1 << current_digit) == gamma_rate & (1 << current_digit)
                     end
@@ -25,7 +24,6 @@ module Y2021
                 current_digit = digits - 1
                 while working_set.count > 1
                     gamma_rate, epsilon_rate = Y2021::Day3::Part1.calculate_diagnostics working_set, digits
-                    #binding.pry
                     working_set = working_set.filter do |value|
                         value & (1 << current_digit) == epsilon_rate & (1 << current_digit)
                     end
