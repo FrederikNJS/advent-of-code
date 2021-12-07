@@ -68,7 +68,10 @@ RSpec.describe "2021 Day 07" do
 
         context "examples" do
             it 'matches the numbers in the example' do
-
+                crab_positions = [16,1,2,0,4,2,7,1,2,14]
+                position, fuel_cost = part2.find_best_position crab_positions
+                expect(fuel_cost).to eq 168
+                expect(position).to eq 5
             end
         end
 
