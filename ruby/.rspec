@@ -1,1 +1,1 @@
---require spec_helper --format documentation --profile
+--require spec_helper --require profiling_documentation_formatter.rb --format ProfilingDocumentationFormatter
