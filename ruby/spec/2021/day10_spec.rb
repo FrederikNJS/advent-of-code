@@ -88,7 +88,7 @@ RSpec.describe '2021 Day 10' do
                 autocompletions = input.map{|line|part2.find_syntax_error line}.filter{|autocompletion| !autocompletion.nil?}
                 scores = part2.calculate_autocomplete_score autocompletions
                 winning_score = scores.sort[scores.size / 2]
-                expect(winning_score).to eq 288957
+                expect(winning_score).to eq 4330777059
             end
         end
     end
