@@ -71,10 +71,6 @@ RSpec.describe '2021 Day 17' do
                 all_hits = part1.simulate_all target_area
                 expect(all_hits.count).to eq 112
             end
-
-            it 'matches the numbers in the second example' do
-
-            end
         end
 
         context "challenge" do

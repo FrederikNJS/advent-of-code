@@ -97,12 +97,6 @@ RSpec.describe '2021 Day 16' do
     end
 
     context 'Part 2' do
-        context 'unit tests' do
-            it 'can extend the grid' do
-
-            end
-        end
-
         context "examples" do
             it 'matches the numbers in the first example' do
                 raw = "C200B40A82"
