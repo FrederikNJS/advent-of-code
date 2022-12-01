@@ -31,7 +31,6 @@ module Y2021
             end
 
             def self.a_star grid, origin, target
-
                 cameFrom = Hash.new
                 gScore = Hash.new(Float::INFINITY)
                 gScore[origin] = 0

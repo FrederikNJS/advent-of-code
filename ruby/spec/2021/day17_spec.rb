@@ -82,4 +82,3 @@ RSpec.describe '2021 Day 17' do
         end
     end
 end
-
