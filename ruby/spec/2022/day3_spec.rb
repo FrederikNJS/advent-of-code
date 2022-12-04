@@ -1,3 +1,5 @@
+require 'set'
+
 require_relative '../../2022/03/part1.rb'
 require_relative '../../2022/03/part2.rb'
 
