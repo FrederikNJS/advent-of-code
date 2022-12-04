@@ -49,6 +49,12 @@ module Y2022
             def self.calculate_guide guide
                 guide.map {|game| self.calculate_game_score(*game)}.sum
             end
+
+            def self.solve input=nil
+                input = self.read_input unless input
+                guide = self.parse_input input
+                self.calculate_guide guide
+            end
         end
     end
 end

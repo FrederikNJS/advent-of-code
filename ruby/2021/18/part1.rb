@@ -46,8 +46,10 @@ module Y2021
                             end
                             shock[1] = nil
                         end
+                        # TODO: WTF?
                         if shock[0] &&
-                        outer_shock[0] = shock[0]
+                            outer_shock[0] = shock[0]
+                        end
                     end
                     if right.class == Array
                         right, shock = self.explode right, level+1

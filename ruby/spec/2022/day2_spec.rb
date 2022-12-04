@@ -7,10 +7,6 @@ RSpec.describe "2022 Day 2" do
 
     context 'Part 1' do
         context "unit tests" do
-            it 'can read the input' do
-
-            end
-
             it 'score a match' do
                 result = part1.calculate_game_score :rock, :scissors
                 expect(result).to eq 3
@@ -22,23 +18,18 @@ RSpec.describe "2022 Day 2" do
 
         context "examples" do
             it 'matches the numbers in the example' do
-                input = [
-                    'A Y',
-                    'B X',
-                    'C Z'
-                ]
+                input = 'A Y
+B X
+C Z'.lines
 
-                parsed = part1.parse_input input
-                result = part1.calculate_guide parsed
+                result = part1.solve input
                 expect(result).to eq 15
             end
         end
 
         context "challenge" do
             it "finds the answer" do
-                input = part1.read_input
-                guide = part1.parse_input input
-                result = part1.calculate_guide guide
+                result = part1.solve
                 expect(result).to eq 13809
             end
         end
@@ -47,23 +38,18 @@ RSpec.describe "2022 Day 2" do
     context 'Part 2' do
         context "examples" do
             it 'matches the numbers in the example' do
-                input = [
-                    'A Y',
-                    'B X',
-                    'C Z'
-                ]
+                input = 'A Y
+B X
+C Z'.lines
 
-                parsed = part2.parse_input input
-                result = part2.calculate_guide parsed
+                result = part2.solve input
                 expect(result).to eq 12
             end
         end
 
         context "challenge" do
             it "finds the answer" do
-                input = part1.read_input
-                guide = part2.parse_input input
-                result = part2.calculate_guide guide
+                result = part2.solve
                 expect(result).to eq 12316
             end
         end

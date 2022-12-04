@@ -1,6 +1,11 @@
+require_relative 'part1.rb'
+
 module Y2022
     module Day2
         module Part2
+            @part1 = Y2022::Day2::Part1
+
+
             @symbol_lut = {
                 A: :rock,
                 B: :paper,
@@ -44,6 +49,12 @@ module Y2022
 
             def self.calculate_guide guide
                 guide.map {|game| self.calculate_game_score(*game)}.sum
+            end
+
+            def self.solve input=nil
+                input = @part1.read_input unless input
+                guide = self.parse_input input
+                self.calculate_guide guide
             end
         end
     end

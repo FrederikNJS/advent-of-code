@@ -7,10 +7,6 @@ RSpec.describe "2022 Day 3" do
 
     context 'Part 1' do
         context "unit tests" do
-            it 'can read the input' do
-
-            end
-
             it 'can parse rucksacks' do
                 rucksack = 'vJrwpWtwJgWrhcsFMMfFFhFp'
                 parsed = part1.parse_rucksack(rucksack)

@@ -7,12 +7,18 @@ RSpec.describe "2022 Day 1" do
 
     context 'Part 1' do
         context "unit tests" do
-            it 'can read the input' do
-                input = part1.read_input
-                expect(input[0]).to eq 11334
-                expect(input[1]).to eq 6264
-                expect(input[2]).to eq 9318
-                expect(input[3]).to be 0
+            it 'can parse the input' do
+                input = '1000
+2000
+3000
+
+4000'.lines
+                parsed = part1.parse_input input
+                expect(parsed[0]).to eq 1000
+                expect(parsed[1]).to eq 2000
+                expect(parsed[2]).to eq 3000
+                expect(parsed[3]).to be 0
+                expect(parsed[4]).to be 4000
             end
 
             it 'can split elves' do
@@ -45,34 +51,30 @@ RSpec.describe "2022 Day 1" do
 
         context "examples" do
             it 'matches the numbers in the example' do
-                example_values = [
-                    1000,
-                    2000,
-                    3000,
-                    0,
-                    4000,
-                    0,
-                    5000,
-                    6000,
-                    0,
-                    7000,
-                    8000,
-                    9000,
-                    0,
-                    10000
-                ]
-                chunks = part1.split_elves(example_values)
-                sums = part1.sum_elves(chunks)
-                expect(sums).to eq [6000, 4000, 11000, 24000, 10000]
+                input = '1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000'.lines
+
+                result = part1.solve input
+                expect(result).to eq 24000
             end
         end
 
         context "challenge" do
             it "finds the answer" do
-                input = part1.read_input
-                chunks = part1.split_elves input
-                sums = part1.sum_elves chunks
-                expect(sums.max).to eq 66186
+                result = part1.solve
+                expect(result).to eq 66186
             end
         end
     end
@@ -80,18 +82,30 @@ RSpec.describe "2022 Day 1" do
     context 'Part 2' do
         context "examples" do
             it 'matches the numbers in the example' do
+                input = '1000
+2000
+3000
 
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000'.lines
+
+                result = part2.solve input
+                expect(result).to eq 45000
             end
         end
 
         context "challenge" do
             it "finds the answer" do
-                input = part1.read_input
-                chunks = part1.split_elves input
-                sums = part1.sum_elves chunks
-                sorted = sums.sort.reverse
-                expect(sorted[0..2]).to eq [66186, 65638, 64980]
-                expect(sorted[0..2].sum).to eq 196804
+                result = part2.solve
+                expect(result).to eq 196804
             end
         end
     end
