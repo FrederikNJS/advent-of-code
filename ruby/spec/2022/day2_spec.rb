@@ -1,7 +1,7 @@
 require_relative '../../2022/02/part1.rb'
 require_relative '../../2022/02/part2.rb'
 
-RSpec.describe "2022 Day 1" do
+RSpec.describe "2022 Day 2" do
     part1 = Y2022::Day2::Part1
     part2 = Y2022::Day2::Part2
 
