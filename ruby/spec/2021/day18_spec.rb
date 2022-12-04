@@ -3,7 +3,7 @@ require_relative '../../2021/18/part1.rb'
 require_relative '../../2021/18/part2.rb'
 require 'pry'
 
-RSpec.describe '2021 Day 18' do
+RSpec.xdescribe '2021 Day 18' do
     part1 = Y2021::Day18::Part1
     part2 = Y2021::Day18::Part2
 
