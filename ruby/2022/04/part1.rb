@@ -25,8 +25,6 @@ module Y2022
                 a.cover?(b) || b.cover?(a)
             end
 
-
-
             def self.solve input=nil
                 input = self.read_input unless input
                 parsed = self.parse_input input

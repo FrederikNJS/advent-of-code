@@ -29,11 +29,11 @@ RSpec.describe '2019/22/Part2' do
         #[6, 7, 8, 9, 0, 1, 2, 3, 4, 5]
     end
 
-    xit 'deal with increment' do
+    it 'deal with increment' do
         index = 2
         max = 9
-        new_index = part1::deal_with_increment(max, index, 3)
-        expect(new_index).to eq 4
+        new_index = part2::deal_with_increment(max, index, 3)
+        expect(new_index).to eq 6
         #[0, 7, 4, 1, 8, 5, 2, 9, 6, 3]
     end
 
@@ -87,5 +87,6 @@ RSpec.describe '2019/22/Part2' do
         res = part1::shuffle(deck, instructions)
         expect(res).to eq [9, 2, 5, 8, 1, 4, 7, 0, 3, 6]
     end
+
 
 end
