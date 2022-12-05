@@ -4,16 +4,33 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "RSpec - active spec file only",
             "type": "Ruby",
             "request": "launch",
-            "program": "~/.rvm/gems/ruby-3.0.0/bin/rspec",
+            "program": "/home/frederiknjs/.rvm/gems/ruby-3.1.3/bin/rspec",
             "args": [
                 "-I",
                 "${workspaceRoot}",
                 "${file}"
-            ]
+            ],
+            "useBundler": true,
+            "showDebuggerOutput": true,
+            "pathToBundler": "/home/frederiknjs/.rvm/gems/ruby-3.1.3/wrappers/bundle"
+        },
+        {
+            "name": "RSpec - all",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "/home/frederiknjs/.rvm/gems/ruby-3.1.3/bin/rspec",
+            "args": [
+                "-I",
+                "${workspaceRoot}"
+            ],
+            "useBundler": true,
+            "showDebuggerOutput": true,
+            "pathToBundler": "/home/frederiknjs/.rvm/gems/ruby-3.1.3/wrappers/bundle"
         }
     ]
 }

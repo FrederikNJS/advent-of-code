@@ -9,4 +9,10 @@ source 'https://rubygems.org' do
   gem 'progress_bar'
   gem 'pqueue'
   gem 'guard-rspec', require: false
+
+  group :development, :test do
+    gem 'ruby-debug-ide'
+    gem 'debase', '>= 0.2.5.beta2'
+  end
+
 end
