@@ -9,6 +9,7 @@ source 'https://rubygems.org' do
   gem 'progress_bar'
   gem 'pqueue'
   gem 'guard-rspec', require: false
+  gem 'rbs'
 
   group :development, :test do
     gem 'ruby-debug-ide'
