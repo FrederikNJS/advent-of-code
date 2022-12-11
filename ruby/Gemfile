@@ -10,6 +10,7 @@ source 'https://rubygems.org' do
   gem 'pqueue'
   gem 'guard-rspec', require: false
   gem 'rbs'
+  gem 'rspec-parameterized'
 
   group :development, :test do
     gem 'ruby-debug-ide'
