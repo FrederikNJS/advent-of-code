@@ -60,7 +60,7 @@ treb7uchet'.lines
 
   context 'Part 2' do
     context "examples" do
-      it 'can properly substitute text numbers' do
+      it 'can find the first number' do
         input = [
           'two1nine',
           'eightwothree',
@@ -71,13 +71,33 @@ treb7uchet'.lines
           '7pqrstsixteen'
         ]
 
-        expect(part2.substitute_text_numbers input[0]).to eq '219'
-        expect(part2.substitute_text_numbers input[1]).to eq '83'
-        expect(part2.substitute_text_numbers input[2]).to eq '123'
-        expect(part2.substitute_text_numbers input[3]).to eq '234'
-        expect(part2.substitute_text_numbers input[4]).to eq '49872'
-        expect(part2.substitute_text_numbers input[5]).to eq '1234'
-        expect(part2.substitute_text_numbers input[6]).to eq '76'
+        expect(part2.first_number input[0]).to eq '2'
+        expect(part2.first_number input[1]).to eq '8'
+        expect(part2.first_number input[2]).to eq '1'
+        expect(part2.first_number input[3]).to eq '2'
+        expect(part2.first_number input[4]).to eq '4'
+        expect(part2.first_number input[5]).to eq '1'
+        expect(part2.first_number input[6]).to eq '7'
+      end
+
+      it 'can find the last number' do
+        input = [
+          'two1nine',
+          'eightwothree',
+          'abcone2threexyz',
+          'xtwone3four',
+          '4nineeightseven2',
+          'zoneight234',
+          '7pqrstsixteen'
+        ]
+
+        expect(part2.last_number input[0]).to eq '9'
+        expect(part2.last_number input[1]).to eq '3'
+        expect(part2.last_number input[2]).to eq '3'
+        expect(part2.last_number input[3]).to eq '4'
+        expect(part2.last_number input[4]).to eq '2'
+        expect(part2.last_number input[5]).to eq '4'
+        expect(part2.last_number input[6]).to eq '6'
       end
 
       it 'matches the numbers in the example' do
@@ -95,7 +115,7 @@ zoneight234
 
     context "challenge" do
       it "finds the answer" do
-
+        expect(part2.solve).to eq 55093
       end
     end
   end

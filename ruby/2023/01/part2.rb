@@ -18,20 +18,20 @@ module Y2023
         'zero' => '0'
       }
 
-      def self.first_index_of_number line
+      @reversed_key_substitutions = @substitutions.map {|key, value| [key.reverse, value]}.to_h
 
+      def self.first_number line
+        @substitutions.map {|text, number| [number, [line.index(text) || 100, line.index(number) || 100].min] }.to_h.min_by {|number, index| index}[0]
+      end
 
-      def self.substitute_text_numbers line
-        new_line = line.dup
-        @substitutions.each {|text, number| new_line.gsub! text, number }
-        new_line
+      def self.last_number line
+        @reversed_key_substitutions.map {|text, number| [number, [line.reverse.index(text) || 100, line.reverse.index(number) || 100].min] }.to_h.min_by {|number, index| index}[0]
       end
 
       def self.solve input=nil
         input ||= @part1.read_input
         input.map do |line|
-          new_line = self.substitute_text_numbers line
-          @part1.extract_number new_line
+          (self.first_number(line) + self.last_number(line)).to_i
         end.sum
       end
     end
